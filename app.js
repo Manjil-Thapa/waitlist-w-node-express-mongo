@@ -3,12 +3,23 @@ const mongoose = require("mongoose");
 const User = require("./models/user");
 const ExpressError = require("./utilities/ExpressError");
 const catchAsync = require("./utilities/catchAsync");
+const path = require("path");
 
 const port = 3000;
 const app = express();
 
 // Connecting Database
-const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/waitlist";
+// mongoose.set('strictQuery', false);
+// mongoose.connect('mongodb://127.0.0.1:27017/mywaitlist');
+//   .then(() => {
+//     console.log('MongoDB connected')
+//   })
+//   .catch((e) => {
+//     console.log('MongoDb connection error')
+//     console.log(e)
+//   })
+
+const dbUrl = process.env.DB_URL || "mongodb://127.0.0.1:27017/mywaitlist";
 mongoose.connect(dbUrl, {});
 
 const db = mongoose.connection;

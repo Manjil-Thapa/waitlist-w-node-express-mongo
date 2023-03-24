@@ -1,8 +1,8 @@
 // user schema with an email field
 const mongoose = require("mongoose");
-Schema = mongoose.Schema;
 const AutoIncrement = require("mongoose-sequence")(mongoose);
 
+const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   email: {
     type: String,
